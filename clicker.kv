@@ -1,0 +1,40 @@
+<ClickerLayout>:
+    orientation: 'vertical'
+    padding: 20
+    spacing: 10
+    canvas.before:
+        Color:
+            rgba: 0.1, 0.1, 0.1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        size_hint_y: 0.1
+        Widget:
+        Button:
+            size_hint_x: 0.2
+            background_normal: 'settings.png'
+    
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: "Баланс: " + str(root.balance)
+            font_size: 30
+        Label:
+            text: "Клик: +" + str(root.click_power)
+        Label:
+            text: "Авто: " + str(root.auto_click)
+
+    Button:
+        text: "КЛИКАЙ!"
+        size_hint: (0.6, 0.4)
+        pos_hint: {'center_x': 0.5}
+        on_press: root.on_click()
+
+    BoxLayout:
+        size_hint_y: 0.1
+        Button:
+            background_normal: 'shop.png'
+        Button:
+            background_normal: 'profile.png'
